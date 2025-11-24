@@ -20,7 +20,7 @@ namespace BarberBoss.Application.AutoMapper
 
         private void EntityToResponse()
         {
-            CreateMap<Billing, ReponseRegisterBillingJson>();
+            CreateMap<Billing, ResponseRegisterBillingJson>();
             CreateMap<Billing, ResponseShortBillingJson>();
             CreateMap<Billing, ResponseBillingJson>();
         }

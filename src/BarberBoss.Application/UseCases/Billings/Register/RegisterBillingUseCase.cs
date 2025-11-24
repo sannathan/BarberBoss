@@ -1,8 +1,10 @@
 ﻿using AutoMapper;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
+using BarberBoss.Domain.Entities;
 using BarberBoss.Domain.Repositories;
 using BarberBoss.Domain.Repositories.Billings;
+using BarberBoss.Exception.ExceptionsB;
 using Microsoft.IdentityModel.Tokens;
 
 namespace BarberBoss.Application.UseCases.Billings.Register
@@ -19,12 +21,17 @@ namespace BarberBoss.Application.UseCases.Billings.Register
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<ReponseRegisterBillingJson> IRegisterBillingUseCase.Execute(RequestBillingJson request)
+        public async Task<ResponseRegisterBillingJson> Execute(RequestBillingJson request)
         {
             Validate(request);
 
-             
+            var entity = _mapper.Map<Billing>(request);
 
+            await _repository.Add(entity);
+
+            await _unitOfWork.Commit();
+
+            return _mapper.Map<ResponseRegisterBillingJson>(entity);
         }
 
         private void Validate(RequestBillingJson request)

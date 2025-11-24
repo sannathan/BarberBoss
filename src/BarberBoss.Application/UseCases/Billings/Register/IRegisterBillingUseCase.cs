@@ -5,7 +5,7 @@ namespace BarberBoss.Application.UseCases.Billings.Register
 {
     public interface IRegisterBillingUseCase
     {
-        Task<ReponseRegisterBillingJson> Execute(RequestBillingJson request);
+        Task<ResponseRegisterBillingJson> Execute(RequestBillingJson request);
 
     }
 }
