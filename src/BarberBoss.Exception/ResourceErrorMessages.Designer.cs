@@ -160,6 +160,15 @@ namespace BarberBoss.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Unknown error.
+        /// </summary>
+        public static string UNKNOWN_ERROR {
+            get {
+                return ResourceManager.GetString("UNKNOWN_ERROR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Updated date cannot be in the future.
         /// </summary>
         public static string UPDATED_AT_CANNOT_BE_FUTURE {

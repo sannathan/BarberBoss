@@ -153,4 +153,7 @@
   <data name="UPDATED_AT_CANNOT_BE_FUTURE" xml:space="preserve">
     <value>Updated date cannot be in the future</value>
   </data>
+  <data name="UNKNOWN_ERROR" xml:space="preserve">
+    <value>Unknown error</value>
+  </data>
 </root>
