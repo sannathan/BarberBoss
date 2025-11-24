@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BarberBoss.Infraestructure.DataAccess.Repositories.Billings
 {
-    internal class BilllingsRepository : IBillingsWriteOnlyRepository
+    internal class BilllingsRepository : IBillingsWriteOnlyRepository, IBillingsReadOnlyRepository
     {
         private readonly BarberBossDbContext _dbContext;
         public BilllingsRepository(BarberBossDbContext dbContext)
@@ -28,6 +28,11 @@ namespace BarberBoss.Infraestructure.DataAccess.Repositories.Billings
             _dbContext.Billings.Remove(result);
 
             return true;
+        }
+
+        public async Task<List<Billing>> GetAll()
+        {
+            return await _dbContext.Billings.AsNoTracking().ToListAsync();
         }
     }
 }
