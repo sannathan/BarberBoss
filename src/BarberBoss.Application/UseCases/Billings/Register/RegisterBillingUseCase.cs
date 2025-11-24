@@ -27,6 +27,9 @@ namespace BarberBoss.Application.UseCases.Billings.Register
 
             var entity = _mapper.Map<Billing>(request);
 
+            entity.CreatedAt = DateTime.UtcNow;
+            entity.UpdatedAt = DateTime.UtcNow;
+
             await _repository.Add(entity);
 
             await _unitOfWork.Commit();
