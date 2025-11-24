@@ -19,9 +19,6 @@ namespace BarberBoss.Application.UseCases.Billings
             RuleFor(billing => billing.Amount).GreaterThanOrEqualTo(0).WithMessage(ResourceErrorMessages.AMOUNT_MUST_BE_GREATER_THAN_ZERO);
             RuleFor(billing => billing.PaymentMethod).IsInEnum().WithMessage(ResourceErrorMessages.PAYMENT_METHOD_INVALID);
             RuleFor(billing => billing.Status).IsInEnum().WithMessage(ResourceErrorMessages.PAYMENT_METHOD_INVALID);
-            RuleFor(billing => billing.CreatedAt).LessThanOrEqualTo(DateTime.UtcNow).WithMessage(ResourceErrorMessages.CREATED_AT_CANNOT_BE_FUTURE);
-            RuleFor(billing => billing.UpdatedAt).LessThanOrEqualTo(DateTime.UtcNow).WithMessage(ResourceErrorMessages.UPDATED_AT_CANNOT_BE_FUTURE);
         }
-
     }
 }
