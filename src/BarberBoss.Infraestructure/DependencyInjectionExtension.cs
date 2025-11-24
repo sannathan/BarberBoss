@@ -20,6 +20,7 @@ namespace BarberBoss.Infraestructure
         {
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IBillingsWriteOnlyRepository, BilllingsRepository>();
+            services.AddScoped<IBillingsReadOnlyRepository, BilllingsRepository>();
         }
 
         private static void AddDbContext(IServiceCollection services, IConfiguration configuration)
