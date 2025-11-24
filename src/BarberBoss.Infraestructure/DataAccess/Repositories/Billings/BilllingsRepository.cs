@@ -34,5 +34,10 @@ namespace BarberBoss.Infraestructure.DataAccess.Repositories.Billings
         {
             return await _dbContext.Billings.AsNoTracking().ToListAsync();
         }
+
+        public async Task<Billing?> GetById(Guid Id)
+        {
+            return await _dbContext.Billings.AsNoTracking().FirstOrDefaultAsync(billing => billing.Id == Id);
+        }
     }
 }
