@@ -1,11 +1,10 @@
 ﻿using BarberBoss.Application.UseCases.Billings.GetAll;
 using BarberBoss.Application.UseCases.Billings.GetById;
 using BarberBoss.Application.UseCases.Billings.Register;
+using BarberBoss.Application.UseCases.Billings.Update;
 using BarberBoss.Communication.Requests;
 using BarberBoss.Communication.Responses;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.ActionConstraints;
 
 namespace BarberBoss.API.Controllers
 {
@@ -46,6 +45,16 @@ namespace BarberBoss.API.Controllers
             var response = await useCase.Execute(Id);
 
             return Ok(response);
+        }
+
+        [HttpPatch("{Id}")]
+        [ProducesResponseType(typeof(ResponseBillingJson), StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Update([FromServices] IUpdateBillingUseCase useCase, [FromRoute] Guid Id, [FromBody] RequestBillingJson request)
+        {
+            await useCase.Execute(Id, request);
+
+            return NoContent();
         }
 
     }

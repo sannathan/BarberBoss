@@ -1,10 +1,11 @@
 ﻿using BarberBoss.Domain.Entities;
 using BarberBoss.Domain.Repositories.Billings;
 using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 
 namespace BarberBoss.Infraestructure.DataAccess.Repositories.Billings
 {
-    internal class BilllingsRepository : IBillingsWriteOnlyRepository, IBillingsReadOnlyRepository
+    internal class BilllingsRepository : IBillingsWriteOnlyRepository, IBillingsReadOnlyRepository, IBillingsUpdateOnlyRepository
     {
         private readonly BarberBossDbContext _dbContext;
         public BilllingsRepository(BarberBossDbContext dbContext)
@@ -35,9 +36,19 @@ namespace BarberBoss.Infraestructure.DataAccess.Repositories.Billings
             return await _dbContext.Billings.AsNoTracking().ToListAsync();
         }
 
-        public async Task<Billing?> GetById(Guid Id)
+         async Task<Billing?> IBillingsReadOnlyRepository.GetById(Guid Id)
         {
             return await _dbContext.Billings.AsNoTracking().FirstOrDefaultAsync(billing => billing.Id == Id);
+        }
+
+        async Task<Billing?> IBillingsUpdateOnlyRepository.GetById(Guid Id)
+        {
+            return await _dbContext.Billings.FirstOrDefaultAsync(billing => billing.Id == Id);
+        }
+
+        public void Update( Billing billing)
+        {
+            _dbContext.Billings.Update(billing);
         }
     }
 }
