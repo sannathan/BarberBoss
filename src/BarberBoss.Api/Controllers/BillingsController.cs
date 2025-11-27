@@ -1,4 +1,5 @@
-﻿using BarberBoss.Application.UseCases.Billings.GetAll;
+﻿using BarberBoss.Application.UseCases.Billings.Delete;
+using BarberBoss.Application.UseCases.Billings.GetAll;
 using BarberBoss.Application.UseCases.Billings.GetById;
 using BarberBoss.Application.UseCases.Billings.Register;
 using BarberBoss.Application.UseCases.Billings.Update;
@@ -48,7 +49,7 @@ namespace BarberBoss.API.Controllers
         }
 
         [HttpPatch("{Id}")]
-        [ProducesResponseType(typeof(ResponseBillingJson), StatusCodes.Status204NoContent)]
+        [ProducesResponseType( StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> Update([FromServices] IUpdateBillingUseCase useCase, [FromRoute] Guid Id, [FromBody] RequestBillingJson request)
         {
@@ -56,6 +57,17 @@ namespace BarberBoss.API.Controllers
 
             return NoContent();
         }
+
+        [HttpDelete("{Id}")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> Delete([FromServices] IDeleteBillingUseCase useCase, [FromRoute] Guid Id)
+        {
+            await useCase.Execute(Id);
+
+            return NoContent();
+        }
+
 
     }
 }
