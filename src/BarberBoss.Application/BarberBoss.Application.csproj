@@ -14,11 +14,14 @@
 
   <ItemGroup>
     <Folder Include="Logo\" />
+    <Folder Include="UseCases\Billings\Reports\Pdf\" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="15.1.0" />
+    <PackageReference Include="ClosedXML" Version="0.105.0" />
     <PackageReference Include="FluentValidation" Version="12.1.0" />
+    <PackageReference Include="PDFsharp-MigraDoc" Version="6.2.3" />
   </ItemGroup>
 
 </Project>

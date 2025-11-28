@@ -50,5 +50,14 @@ namespace BarberBoss.Infraestructure.DataAccess.Repositories.Billings
         {
             _dbContext.Billings.Update(billing);
         }
+
+        public async Task<List<Billing>> FilterByMonth(DateOnly date)
+        {
+            var daysInMonth = DateTime.DaysInMonth(year: date.Year, month: date.Month);
+            var startDate = new DateTime(year: date.Year, month: date.Month, day: 1);
+            var endDate = new DateTime(year: date.Year, month: date.Month, day: daysInMonth);
+
+            return await _dbContext.Billings.AsNoTracking().Where(billing => billing.Date >= startDate && billing.Date <= endDate).OrderBy(billing => billing.Date).ThenBy(billing => billing.Amount).ToListAsync();
+        }
     }
 }
