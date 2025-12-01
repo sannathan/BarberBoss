@@ -41,7 +41,7 @@ namespace BarberBoss.Application.UseCases.Billings.Reports.Excel
                 worksheet.Cell($"D{raw}").Value = billing.Amount;
                 worksheet.Cell($"D{raw}").Style.NumberFormat.Format = $"-{CURRENCY_SYMBOL} #,##0.00";
                 worksheet.Cell($"E{raw}").Value = billing.Status.StatusTypeToString();
-                worksheet.Cell($"F{raw}").Value = billing.Date;
+                worksheet.Cell($"F{raw}").Value = billing.Date.ToDateTime(TimeOnly.MinValue);
                 worksheet.Cell($"G{raw}").Value = billing.Notes;
                 worksheet.Cell($"H{raw}").Value = billing.PaymentMethod.PaymentMethodToString();
 

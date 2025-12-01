@@ -1,6 +1,7 @@
 ﻿using BarberBoss.Application.UseCases.Billings.Reports.Excel;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Mime;
 
 namespace BarberBoss.API.Controllers
 {
@@ -15,7 +16,7 @@ namespace BarberBoss.API.Controllers
 
             if(file.Length > 0)
             {
-                return Ok(file);
+                return File(file, MediaTypeNames.Application.Octet, "report.xlsx");
             }
 
             return NoContent();
