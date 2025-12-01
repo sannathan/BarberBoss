@@ -7,14 +7,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj" />
-    <ProjectReference Include="..\BarberBoss.Domain\BarberBoss.Domain.csproj" />
-    <ProjectReference Include="..\BarberBoss.Exception\BarberBoss.Exception.csproj" />
+    <None Remove="Logo\ProfilePhoto.jpg" />
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Raleway-Black.ttf" />
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\Raleway-Regular.ttf" />
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\WorkSans-Black.ttf" />
+    <None Remove="UseCases\Billings\Reports\Pdf\Fonts\WorkSans-Regular.ttf" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Logo\" />
-    <Folder Include="UseCases\Billings\Reports\Pdf\" />
+    <EmbeddedResource Include="Logo\ProfilePhoto.jpg" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Raleway-Black.ttf" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\Raleway-Regular.ttf" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\WorkSans-Black.ttf" />
+    <EmbeddedResource Include="UseCases\Billings\Reports\Pdf\Fonts\WorkSans-Regular.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BarberBoss.Communication\BarberBoss.Communication.csproj" />
+    <ProjectReference Include="..\BarberBoss.Domain\BarberBoss.Domain.csproj" />
+    <ProjectReference Include="..\BarberBoss.Exception\BarberBoss.Exception.csproj" />
   </ItemGroup>
 
   <ItemGroup>

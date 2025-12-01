@@ -159,4 +159,13 @@
   <data name="DEBIT_CARD" xml:space="preserve">
     <value>Debit Card</value>
   </data>
+  <data name="BILLINGS_FOR" xml:space="preserve">
+    <value>Billings for</value>
+  </data>
+  <data name="TOTAL_EARNED_IN" xml:space="preserve">
+    <value>Total earned in</value>
+  </data>
+  <data name="NATHAN_BARBERSHOP" xml:space="preserve">
+    <value>Nathan Barbershop</value>
+  </data>
 </root>

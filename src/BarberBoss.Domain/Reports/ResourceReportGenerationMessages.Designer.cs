@@ -79,6 +79,15 @@ namespace BarberBoss.Domain.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Billings for.
+        /// </summary>
+        public static string BILLINGS_FOR {
+            get {
+                return ResourceManager.GetString("BILLINGS_FOR", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Canceled.
         /// </summary>
         public static string CANCELED {
@@ -133,6 +142,15 @@ namespace BarberBoss.Domain.Reports {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nathan Barbershop.
+        /// </summary>
+        public static string NATHAN_BARBERSHOP {
+            get {
+                return ResourceManager.GetString("NATHAN_BARBERSHOP", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Notes.
         /// </summary>
         public static string NOTES {
@@ -183,6 +201,15 @@ namespace BarberBoss.Domain.Reports {
         public static string STATUS {
             get {
                 return ResourceManager.GetString("STATUS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Total earned in.
+        /// </summary>
+        public static string TOTAL_EARNED_IN {
+            get {
+                return ResourceManager.GetString("TOTAL_EARNED_IN", resourceCulture);
             }
         }
     }
