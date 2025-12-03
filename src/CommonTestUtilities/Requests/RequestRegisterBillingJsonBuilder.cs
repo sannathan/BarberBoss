@@ -1,7 +1,6 @@
 ﻿using BarberBoss.Communication.Enums;
 using BarberBoss.Communication.Requests;
 using Bogus;
-using System.Reflection.Metadata.Ecma335;
 
 namespace CommonTestUtilities.Requests
 {

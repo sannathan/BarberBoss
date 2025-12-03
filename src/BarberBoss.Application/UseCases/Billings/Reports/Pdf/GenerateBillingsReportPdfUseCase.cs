@@ -129,8 +129,10 @@ namespace BarberBoss.Application.UseCases.Billings.Reports.Pdf
             var directoryName = Path.GetDirectoryName(assembly.Location);
 
             row.Cells[0].AddImage(Path.Combine(directoryName!, "Logo", "ProfilePhoto.jpg"));
+            row.Cells[0].Format.RightIndent = 20;
+            row.Cells[1].RoundedCorner = RoundedCorner.BottomLeft;
             row.Cells[1].AddParagraph(ResourceReportGenerationMessages.NATHAN_BARBERSHOP);
-            row.Cells[1].Format.Font = new Font { Name = FontsHelper.RALEWAY_BLACK, Size = 16 };
+            row.Cells[1].Format.Font = new Font { Name = FontsHelper.RALEWAY_BLACK, Size = 25 };
             row.Cells[1].VerticalAlignment = MigraDoc.DocumentObjectModel.Tables.VerticalAlignment.Center;
 
             row = table.AddRow();

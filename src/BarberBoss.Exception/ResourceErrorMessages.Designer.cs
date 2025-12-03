@@ -160,6 +160,15 @@ namespace BarberBoss.Exception {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Service name required.
+        /// </summary>
+        public static string SERVICE_NAME_REQUIRED {
+            get {
+                return ResourceManager.GetString("SERVICE_NAME_REQUIRED", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Invalid status.
         /// </summary>
         public static string STATUS_INVALID {

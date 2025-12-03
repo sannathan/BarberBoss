@@ -159,4 +159,7 @@
   <data name="BILLING_NOT_FOUND" xml:space="preserve">
     <value>Billing Not Found</value>
   </data>
+  <data name="SERVICE_NAME_REQUIRED" xml:space="preserve">
+    <value>Service name required</value>
+  </data>
 </root>
