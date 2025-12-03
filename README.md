@@ -1,7 +1,3 @@
-﻿# BarberBoss
-
-This is the README for the BarberBoss project.
-
 ## 💈 BarberBoss
 
 <div align="center">
