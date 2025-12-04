@@ -127,8 +127,8 @@ namespace BarberBoss.Application.UseCases.Billings.Reports.Pdf
 
             var assembly = Assembly.GetExecutingAssembly();
             var directoryName = Path.GetDirectoryName(assembly.Location);
+            row.Cells[0].AddImage(Path.Combine(directoryName!, "Logo", "ProfilePhoto.png"));
 
-            row.Cells[0].AddImage(Path.Combine(directoryName!, "Logo", "ProfilePhoto.jpg"));
             row.Cells[0].Format.RightIndent = 20;
             row.Cells[1].RoundedCorner = RoundedCorner.BottomLeft;
             row.Cells[1].AddParagraph(ResourceReportGenerationMessages.NATHAN_BARBERSHOP);

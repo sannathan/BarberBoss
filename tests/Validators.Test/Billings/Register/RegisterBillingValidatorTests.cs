@@ -2,8 +2,6 @@
 using BarberBoss.Communication.Enums;
 using BarberBoss.Exception;
 using CommonTestUtilities.Requests;
-using DocumentFormat.OpenXml.Drawing.Charts;
-using DocumentFormat.OpenXml.Drawing.Diagrams;
 using FluentAssertions;
 using Xunit;
 
